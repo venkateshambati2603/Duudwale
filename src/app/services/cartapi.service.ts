@@ -14,10 +14,10 @@ export class CartapiService {
    return this.productList.asObservable();
   }
 
-  setProduct(product:any){
-    this.cartDataList.push(...product);
-    this.productList.next(product)
-  }
+  // setProduct(product:any){
+  //   this.cartDataList.push(...product);
+  //   this.productList.next(product)
+  // }
 
   addToCart(product:any){
     this.cartDataList.push(product)

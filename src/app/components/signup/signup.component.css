@@ -1,0 +1,17 @@
+.card{
+    margin-top: 15px;
+    border: 1px solod blueviolet;
+    width: 550px;
+    padding: 45px;
+    position: absolute;
+    top: 20%;
+    left: 35%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+form input{
+    margin-top: 10px;
+}

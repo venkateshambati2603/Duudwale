@@ -29,11 +29,16 @@
                         </tr>
                     </tbody>
                 </table>
+                <button class="btn btn-danger" style="float: right; margin-bottom: 10px; margin-right:5px;" (click)="removeAllProduct()">Remove All Products</button>
             </div>
         </div>
     </div>
     
 </ng-container>
+
+
+
+
 <ng-container *ngIf="products.length == 0" >
 <div class="container">
     <div class="card">
