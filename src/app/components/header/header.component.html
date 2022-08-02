@@ -1,0 +1,18 @@
+<header>
+    <div class="navbar navbar-dark bg-primary shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <a routerLink="/products" href="">
+            <i style="font-size: 35px;" class='fas fa-shipping-fast'></i>
+            <strong style="font-size: 30px">Shop Mart</strong>
+        </a>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search Products" > 
+            </div>
+            <button class="btn btn-primary">Search</button>
+        </div>
+        <button routerLink="cart" class="btn btn-primary">
+            <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+            <div class="badge bg-danger">{{totaitemNumber}}</div>
+        </button>
+    </div>
+</header>
