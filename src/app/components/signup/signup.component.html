@@ -6,27 +6,27 @@
                     <h1>Shop Mart Registration</h1>
                     <h5>Sign Up Here</h5><hr>
                 </div>
-                <form>
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Name</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+                      <input formControlName="name" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Enter Name">
                       <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                     </div>
                     <div class="form-group">
                         <label >Mobile</label>
-                        <input  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Mobile">
+                        <input formControlName="mobile" class="form-control" aria-describedby="emailHelp" placeholder="Enter Mobile">
                         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input formControlName="email" type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email">
                         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                       </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      <input formControlName="password" type="password" class="form-control"  placeholder="Password">
                     </div>
-                    <button style="margin-top: 15px;" type="submit" class="btn btn-primary">Login</button>
+                    <button  style="margin-top: 15px;" type="submit" class="btn btn-primary">Login</button>
                   </form>
                   <a routerLink="/login" href="">Have an Account? Login In</a>
             </div>

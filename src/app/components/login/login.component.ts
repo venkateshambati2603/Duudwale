@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       (err:Error)=>{
         alert(err.message)
       }
-      // console.log(this.form.value)
+      console.log(this.form.value)
 
     }
   }
