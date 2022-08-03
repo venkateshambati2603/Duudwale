@@ -23,7 +23,7 @@ export class CartapiService {
     this.cartDataList.push(product)
     this.productList.next(this.cartDataList)
     this.getTotalAmout();
-
+    // localStorage.setItem('Products') 
   }
 
   getTotalAmout(){
