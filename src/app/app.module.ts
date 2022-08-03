@@ -13,6 +13,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

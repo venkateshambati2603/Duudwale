@@ -6,6 +6,18 @@
                     <h1>Shop Mart Login</h1>
                     <h5>Login Here</h5><hr>
                 </div>
+                <!-- <form [formGroup]="form">
+                      <mat-form-field class="form-group">
+                          <mat-label>Email</mat-label>
+                          <input matInput type="email" placeholder="Ex. Jane" formControlName="email" />
+                      </mat-form-field>
+                      <mat-form-field class="form-group">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" placeholder="Ex. Jane" formControlName="password" />
+                    </mat-form-field>
+              
+              
+            </form> -->
                 <form [formGroup]="form" (ngSubmit)="onSubmit()">
                     <div class="form-group"> 
                       <label for="exampleInputEmail1">Email address</label>

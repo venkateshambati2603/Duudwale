@@ -30,7 +30,9 @@ export class LoginComponent implements OnInit {
         alert(err.message)
       }
       console.log(this.form.value)
-
+    }
+    if(this.form.invalid){
+      alert("Please Enter your Details")
     }
   }
 }

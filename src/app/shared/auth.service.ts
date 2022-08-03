@@ -30,6 +30,7 @@ export class AuthService {
   }
 
   login({email,password}:any){
+    // this.cartserve.addToCart(this.isLoggedIn())  
     if(email&& password){
       this.setToken('abcdefghijklmnopqrstuvwxyz');
       return of({});
