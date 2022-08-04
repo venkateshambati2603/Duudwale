@@ -6,7 +6,7 @@
                     <h1>Shop Mart Registration</h1>
                     <h5>Sign Up Here</h5><hr>
                 </div>
-                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <form [formGroup]="form" (ngSubmit)="signIn()">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Name</label>
                       <input formControlName="name" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Enter Name">

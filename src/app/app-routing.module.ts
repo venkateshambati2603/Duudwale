@@ -14,7 +14,8 @@ const routes: Routes = [
   {path:'signup', component:SignupComponent},
   {path:'search/:searchItem', component:ProductsComponent},
   {path:'products',canActivate:[AuthGuard], component: ProductsComponent},
-  {path:'cart',canActivate:[AuthGuard],component:CartComponent}
+  {path:'cart',canActivate:[AuthGuard],component:CartComponent},
+  {path:'**', redirectTo:'login',pathMatch:'full'}
 ];
 
 @NgModule({

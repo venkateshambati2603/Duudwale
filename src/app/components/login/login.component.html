@@ -18,7 +18,7 @@
               
               
             </form> -->
-                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <form [formGroup]="form" (ngSubmit)="onLogin()">
                     <div class="form-group"> 
                       <label for="exampleInputEmail1">Email address</label>
                       <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -38,7 +38,7 @@
                   </div>
                     <button style="margin-top: 15px;" type="submit" class="btn btn-primary">Login</button>
                   </form>
-                  <!-- <a routerLink="/signup" href="">New user? Sign Up</a> -->
+                  <a routerLink="/signup" href="">New user? Sign Up</a>
             </div>
         </div>
     </div>

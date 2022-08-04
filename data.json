@@ -1,0 +1,49 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "signup": [
+    {
+      "name": "Venkatesh",
+      "mobile": "9398621182",
+      "email": "venky@gmail.com",
+      "password": "123456789",
+      "id": 1
+    },
+    {
+      "name": "Venky",
+      "mobile": "654564564",
+      "email": "abc@gmail.com",
+      "password": "123456789",
+      "id": 2
+    },
+    {
+      "name": "fdhfd",
+      "mobile": "fdhfd",
+      "email": "fdhfdh@fdgh",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "name": "Sammy James",
+      "mobile": "1234567896",
+      "email": "sammy@james",
+      "password": "sammy james",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

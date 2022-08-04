@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,7 +11,7 @@ import { AuthService } from 'src/app/shared/auth.service';
 })
 export class SignupComponent implements OnInit {
 form!:FormGroup
-  constructor(private formbuilder: FormBuilder,private auth:AuthService,private route:Router) { }
+  constructor(private formbuilder: FormBuilder,private auth:AuthService,private route:Router, private http:HttpClient) { }
 
   ngOnInit(): void {
     this.form = this.formbuilder.group({
@@ -20,15 +21,14 @@ form!:FormGroup
       password:['', [Validators.required, Validators.minLength(6)]]
     })
   }
-  onSubmit(){
-    if(this.form.valid){
-      // this.auth.signIn(this.form.value)
-        this.route.navigate(['/login'])
-    }
-      (err:Error)=>{
-        alert(err.message)
-      }
-      console.log(this.form.value)
+  signIn(){
+   this.http.post<any>("http://localhost:3000/signup", this.form.value).subscribe(res=>{
+    alert('signUp Succesfull')
+    this.form.reset();
+    this.route.navigate(['/login'])
+   },err=>{
+    alert("Error occured")
+  })
 
     }
   }
