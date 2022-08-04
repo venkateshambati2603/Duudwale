@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
   }
   onLogin(){
     this.http.get<any>("http://localhost:3000/signup").subscribe(res=>{
-      const user= res.find((a:any)=>{
-        return a.email=== this.form.value.email && a.password === this.form.value.password
+      const user= res.find((res:any)=>{
+        return res.email=== this.form.value.email && res.password === this.form.value.password
       });
       if(user&&this.form.valid){
         alert("Login succes");
