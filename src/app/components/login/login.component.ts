@@ -22,20 +22,35 @@ export class LoginComponent implements OnInit {
       password:['', [Validators.required, Validators.minLength(6)]]
     })
   }
+  private apiUrl = 'http://localhost:5000/api/users';
   onLogin(){
-    this.http.get<any>("http://localhost:3000/signup").subscribe(res=>{
-      const user= res.find((res:any)=>{
-        return res.email=== this.form.value.email && res.password === this.form.value.password
-      });
-      if(user&&this.form.valid){
-        alert("Login succes");
-            this.auth.login(this.form.value).subscribe((res)=>{
-              this.route.navigate(['products'])
-              this.form.reset();
-            })
-    }else{
-      alert("user not found")
-    }})
+    let response: any;
+    console.log('form:: ', this.form.value);
+    this.http.post<any>(`${this.apiUrl}/login`, this.form.value).subscribe(res=>{
+      console.log('token:: ', res.token);
+      response = res;
+      localStorage.setItem('token', response.token);
+
+      alert("Login succes");
+      this.route.navigate(['products'])
+      this.form.reset();
+      
+            
+      // const user= res.find((res:any)=>{
+      //   return res.email=== this.form.value.email && res.password === this.form.value.password
+      // });
+    //   if(user&&this.form.valid){
+    //     alert("Login succes");
+    //         this.auth.login(this.form.value).subscribe((res)=>{
+    //           this.route.navigate(['products'])
+    //           this.form.reset();
+    //         })
+    // }else{
+    //   alert("user not found")
+    // }
+  },err=>{
+    alert("Error occured: "+err.error.message)
+  })
 
     // if(this.form.valid){
     //   this.auth.login(this.form.value).subscribe((res)=>{

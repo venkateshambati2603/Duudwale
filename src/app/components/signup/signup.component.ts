@@ -21,8 +21,12 @@ form!:FormGroup
       password:['', [Validators.required, Validators.minLength(6)]]
     })
   }
+  private apiUrl = 'http://localhost:5000/api/users';
+
   signIn(){
-   this.http.post<any>("http://localhost:3000/signup", this.form.value).subscribe(res=>{
+    console.log('this.form.value:: ',this.form.value);
+    
+   this.http.post<any>(`${this.apiUrl}/register`, this.form.value).subscribe(res=>{
     alert('signUp Succesfull')
     this.form.reset();
     this.route.navigate(['/login'])
