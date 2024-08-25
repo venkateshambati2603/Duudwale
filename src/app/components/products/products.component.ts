@@ -17,6 +17,8 @@ export class ProductsComponent implements OnInit {
   
 
     this.service.getProducts().subscribe(res=>{
+      console.log('products::', res);
+      
       this.products=res;
       this.products.forEach((a:any) => {
         Object.assign(a,{quantity:1, total:a.price})

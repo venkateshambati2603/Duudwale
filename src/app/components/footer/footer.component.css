@@ -1,0 +1,55 @@
+/* styles.css */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px; /* Adjust as needed */
+  }
+  
+  .footer {
+    background-color: #f5f5dc;
+    color: #333;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  /* footer.component.css */
+.footer {
+    background-color: #f5f5dc; /* Light cream background color */
+    color: #333; /* Dark text color */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's on top of other content */
+  }
+  
+  .footer a {
+    color: #333; /* Dark text color */
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .list-unstyled {
+    list-style: none;
+    padding-left: 0; /* Removes the padding from the left */
+  }
+  
+  .list-unstyled li {
+    margin-bottom: 8px;
+  }
+  
+  /* Optional: If you want some padding at the bottom of the main content */
+  .content {
+    padding-bottom: 80px; /* Adjust this value as needed */
+  }
+  

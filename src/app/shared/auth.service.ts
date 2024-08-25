@@ -38,7 +38,7 @@ export class AuthService {
     return throwError(new Error('dailed to login'));
   }
 
-  signIn({email,password}:any){
+  signUp({email,password}:any){
     if(email&& password){
       return alert('Registration Succesfull')
     }
