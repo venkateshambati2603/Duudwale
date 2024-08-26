@@ -1,35 +1,73 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="text-center">
-                    <h1>Shop Mart Registration</h1>
-                    <h5>Sign Up Here</h5><hr>
-                </div>
-                <form [formGroup]="form" (ngSubmit)="signIn()">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Name</label>
-                      <input formControlName="name" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Enter Name">
-                      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                    </div>
-                    <div class="form-group">
-                        <label >Mobile</label>
-                        <input formControlName="mobile" class="form-control" aria-describedby="emailHelp" placeholder="Enter Mobile">
-                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+  <div *ngIf="isLoading" class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="row" [class.blur]="isLoading">
+      <div class="col-md-6">
+          <div class="card">
+              <div class="text-center">
+                  <h1>Duudwale Registration</h1>
+                  <h5>Sign Up Here</h5>
+                  <hr>
+              </div>
+              <form [formGroup]="userDetails" (ngSubmit)="signIn()">
+                  <div class="form-group">
+                      <label for="name">Name</label>
+                      <input formControlName="name" autocomplete="doNotAutoComplete" type="text" class="form-control" placeholder="Enter Name">
+                  </div>
+                  <div class="form-group mt-2">
+                      <label for="mobileNumber">Mobile</label>
+                      <input formControlName="mobileNumber" type="number" autocomplete="doNotAutoComplete" class="form-control" placeholder="Enter Mobile">
+                      <div>
+                          <span class="text-danger" *ngIf="userDetails.controls['mobileNumber']?.hasError('maxlength') && userDetails.controls['mobileNumber'].touched">Mobile Should be less than 10 characters</span>
+                          <span class="text-danger" *ngIf="userDetails.controls['mobileNumber']?.hasError('required') && userDetails.controls['mobileNumber'].touched">Mobile is Required</span> 
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input formControlName="email" type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email">
-                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                  </div>
+                  <div class="form-group mt-2">
+                      <label for="email">Email address</label>
+                      <input formControlName="email" type="email" autocomplete="doNotAutoComplete" class="form-control" placeholder="Enter email">
+                  </div>
+                  <div class="form-group mt-2">
+                      <label for="password">Password</label>
+                      <input formControlName="password" type="password" autocomplete="doNotAutoComplete" class="form-control" placeholder="Password">
+                      <div>
+                          <span class="text-danger" *ngIf="userDetails.controls['password']?.hasError('required') && userDetails.controls['password'].touched">Password is Required</span> 
                       </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input formControlName="password" type="password" class="form-control"  placeholder="Password">
-                    </div>
-                    <button  style="margin-top: 15px;" type="submit" class="btn btn-primary">Login</button>
-                  </form>
-                  <a routerLink="/login" href="">Have an Account? Login In</a>
-            </div>
-        </div>
-    </div>
+                  </div>
+                  <hr>
+                  <h5>Address Information</h5>
+                  <div formGroupName="address"> <!-- Nested FormGroup for Address -->
+                      <div class="form-row d-flex">
+                          <div class="form-group flex-fill mr-2">
+                              <label for="Street">Street</label>
+                              <input formControlName="Street" autocomplete="doNotAutoComplete" type="text" class="form-control" placeholder="Enter Street">
+                          </div>
+                          <div class="form-group flex-fill">
+                              <label for="City">City</label>
+                              <input formControlName="City" autocomplete="doNotAutoComplete" type="text" class="form-control" placeholder="Enter City">
+                          </div>
+                      </div>
+                      <div class="form-row d-flex mt-2">
+                          <div class="form-group flex-fill mr-2">
+                              <label for="State">State</label>
+                              <input formControlName="State" autocomplete="doNotAutoComplete" type="text" class="form-control" placeholder="Enter State">
+                          </div>
+                          <div class="form-group flex-fill">
+                              <label for="PostalCode">Postal Code</label>
+                              <input formControlName="PostalCode" autocomplete="doNotAutoComplete" type="text" class="form-control" placeholder="Enter Postal Code">
+                          </div>
+                      </div>
+                      <div class="form-row d-flex mt-2">
+                          <div class="form-group flex-fill">
+                              <label for="Country">Country</label>
+                              <input formControlName="Country" autocomplete="doNotAutoComplete" type="text" class="form-control" placeholder="Enter Country">
+                          </div>
+                      </div>
+                  </div>
+                  <button style="margin-top: 15px;" type="submit" class="btn btn-primary">Sign Up</button>
+              </form>
+              <a routerLink="/login" href="">Have an Account? Log In</a>
+          </div>
+      </div>
+  </div>
 </div>

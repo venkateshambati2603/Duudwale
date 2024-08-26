@@ -16,3 +16,17 @@ div a{
 .navbar{
     background-color: blueviolet;
 }
+
+.profile-button {
+    margin-right: 10px; /* Adjust margin as needed */
+}
+
+.profile-icon {
+    padding: 10px; /* Add padding around the icon */
+    font-size: 15px; /* Adjust icon size if needed */
+}
+  
+
+.mat-menu-trigger{
+    border: none ;
+}

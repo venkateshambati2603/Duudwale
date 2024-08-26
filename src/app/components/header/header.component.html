@@ -10,12 +10,37 @@
             </div>
             <button class="btn btn-primary">Search</button> -->
         </div>
-        <button routerLink="cart" class="btn navbar">
+
+        <div class="d-flex profile-button  align-items-center">
+            <button mat-button routerLink="cart" class="me-3 btn navbar">
+                <i style="font-size: 30px; color: white;" class="fas fa-cart-plus"></i>
+                <div class="badge bg-danger">{{totaitemNumber}}</div>
+            </button>
+            <mat-menu #profileMenu="matMenu">
+                <button mat-menu-item routerLink="/profile">Profile</button>
+                <button mat-menu-item routerLink="/orders">Orders</button>
+                <button mat-menu-item routerLink="/settings">Settings</button>
+                <mat-divider></mat-divider>
+                <button mat-menu-item (click)="logOut()">Log Out</button>
+            </mat-menu>
+            <button mat-button [matMenuTriggerFor]="profileMenu">
+                <i class="fas fa-user profile-icon"></i>
+            </button>
+        </div>
+        
+        <!-- <button routerLink="cart" class="btn navbar">
             <i style="font-size: 30px; color: white;" class="fas fa-cart-plus"></i>
             <div class="badge bg-danger">{{totaitemNumber}}</div>
         </button>
-    </div>
-    <div>
-        <button  (click)="logOut()" class="btn btn-outline-primary" style="float: right;margin: 5px;">Log Out</button>
+        <mat-menu #profileMenu="matMenu">
+            <button mat-menu-item routerLink="/profile">Profile</button>
+            <button mat-menu-item routerLink="/orders">Orders</button>
+            <button mat-menu-item routerLink="/settings">Settings</button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="logOut()">Log Out</button>
+        </mat-menu>
+        <button mat-button [matMenuTriggerFor]="profileMenu">
+            <i class="fas fa-user"></i>
+        </button> -->
     </div>
 </header>

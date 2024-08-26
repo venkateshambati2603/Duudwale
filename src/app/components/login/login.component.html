@@ -1,10 +1,13 @@
 <div class="container">
-    <div class="row">
+  <div *ngIf="isLoading" class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+    <div class="row" [class.blur]="isLoading">
         <div class="col-md-6">
             <div class="card">
                 <div class="text-center">
-                    <h1>Shop Mart Login</h1>
-                    <h5>Login Here</h5><hr>
+                    <h1>Login Here</h1>
+                    <!-- <h5>Login Here</h5><hr> -->
                 </div>
                 <!-- <form [formGroup]="form">
                       <mat-form-field class="form-group">
@@ -18,27 +21,27 @@
               
               
             </form> -->
-                <form [formGroup]="form" (ngSubmit)="onLogin()">
+                <form [formGroup]="userLogin" (ngSubmit)="onLogin()">
                     <div class="form-group"> 
-                      <label for="exampleInputEmail1">Email address</label>
+                      <label for="exampleInputEmail1">Email Address</label>
                       <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                       <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                     </div>
                     <div>
-                      <span class="text-danger" *ngIf="form.controls['email']?.hasError('email') && form.controls['email'].touched">Enter Proper Email</span>
-                      <span class="text-danger" *ngIf="form.controls['email']?.hasError('required') && form.controls['email'].touched">Email is Required</span> 
-                  </div>
-                    <div class="form-group">
+                      <span class="text-danger" *ngIf="userLogin.controls['email']?.hasError('email') && userLogin.controls['email'].touched">Enter Proper Email</span>
+                      <span class="text-danger" *ngIf="userLogin.controls['email']?.hasError('required') && userLogin.controls['email'].touched">Email is Required</span> 
+                    </div>
+                    <div class="form-group mt-2">
                       <label for="exampleInputPassword1">Password</label>
                       <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
                     <div>
-                      <span class="text-danger" *ngIf="form.controls['password']?.hasError('minlength') && form.controls['password'].touched">Password Should be more than 6 characters</span>
-                      <span class="text-danger" *ngIf="form.controls['password']?.hasError('required') && form.controls['password'].touched">Password is Required</span> 
+                      <span class="text-danger" *ngIf="userLogin.controls['password']?.hasError('minlength') && userLogin.controls['password'].touched">Password Should be more than 6 characters</span>
+                      <span class="text-danger" *ngIf="userLogin.controls['password']?.hasError('required') && userLogin.controls['password'].touched">Password is Required</span> 
                   </div>
                     <button style="margin-top: 15px;" type="submit" class="btn btn-primary">Login</button>
                   </form>
-                  <a routerLink="/signup" href="">New user? Sign Up</a>
+                  <a routerLink="/signup"  href="">Register user</a>
             </div>
         </div>
     </div>

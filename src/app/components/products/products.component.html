@@ -31,7 +31,7 @@
         <ng-container *ngFor="let items of products">
         <div class="card col-md-3">
             <img src="{{items.image}}" alt="">
-            <h5 class="itemdata">{{items.title}}</h5>
+            <h5 class="itemdata">{{items.name}}</h5>
             <p class="itemdata">{{items.description}}</p>
             <p><strong>Price:</strong> {{items.price | currency}}</p>
             <p>{{items.category}}</p>
