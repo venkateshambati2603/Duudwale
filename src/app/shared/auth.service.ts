@@ -11,12 +11,12 @@ export class AuthService {
   constructor(private router : Router,private cartserve: CartapiService) { }
 
   setToken(token:string): void{
-    localStorage.setItem('token', token)
+    sessionStorage.setItem('token', token)
   }
 
   
   getToken(){
-    return localStorage.getItem('token')
+    return sessionStorage.getItem('token')
   }
 
   isLoggedIn(){
@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   logOut(){
-    localStorage.removeItem('token');
+    sessionStorage.removeItem('token');
     this.router.navigate(['login']);
     this.cartserve.removeAllCart()
   }

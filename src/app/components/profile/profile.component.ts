@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+  isLoading = false;
   orders = [
     { product: 'Milk', price: 1.50, quantity: 2, frequency: 'Daily' },
     { product: 'Bread', price: 2.00, quantity: 1, frequency: 'Weekly' },
@@ -44,10 +44,11 @@ export class ProfileComponent implements OnInit {
   }
 
   loadUserDetails(): void {
+    this.isLoading = true;
     this.userService.getUserDetails().subscribe(
       data => {
         console.log('data:;' ,data);
-        
+        this.isLoading = false;
         this.user = data;
         this.originalUser = data; 
       },

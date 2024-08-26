@@ -8,7 +8,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 .blur {
-    filter: blur(3px);
+    filter: blur(1px);
 }
 
   
