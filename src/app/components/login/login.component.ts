@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       res => {
         console.log('token:: ', res.token);
         this.isLoading = false;
-        localStorage.setItem('token', res.token);
+        sessionStorage.setItem('token', res.token);
         this.route.navigate(['products']);
         this.userLogin.reset();
       },

@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
   constructor(private cartService:CartapiService) { }
 
   ngOnInit(): void {
-    localStorage.getItem('Products')
+    sessionStorage.getItem('Products')
     this.cartService.getProductData().subscribe(res=>{
       this.products=res;
       this.allProducts=this.cartService.getTotalAmout();

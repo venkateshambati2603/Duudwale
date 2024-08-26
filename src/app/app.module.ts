@@ -23,6 +23,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     SignupComponent,
     ProfileComponent,
     DashboardComponent,
+    OrdersComponent,
     
   ],
   imports: [
